@@ -30,13 +30,6 @@ module "blog_sg" {
 
 }
 
-resource "aws_security_group" "blog" {
-  name = "blog"
-  description = " Allow HTTP/S in. Allow evertyhinq out"
-
-  vpc_id = data.aws_vpc.default.id
-}
-
 resource "aws_instance" "blog" {
   ami           = data.aws_ami.app_ami.id
   instance_type = var.instance_type
